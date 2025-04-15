@@ -8,21 +8,34 @@ class ListViewAndGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: universities.length,
-        itemBuilder: (context, index) {
-          return Card(
-            elevation: 2,
-            color: Colors.brown,
-            child: ListTile(
-              leading: CircleAvatar(),
-              title: Text(students[index].toString()),
-              subtitle: Text(universities[index].toString()),
-            
-            ),
-          );
-        },
-      )
+      body: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+      children: [
+        Text(students[0]),
+        Text(students[1]),
+        Text(students[2]),
+
+        Text(students[3]),
+        Text(students[4]),
+
+
+      ],)
     );
   }
 }
+//
+//
+// ListView.builder(
+// itemCount: universities.length,
+// itemBuilder: (context, index) {
+// return Card(
+// elevation: 2,
+// color: Colors.brown,
+// child: ListTile(
+// leading: CircleAvatar(),
+// title: Text(students[index].toString()),
+// subtitle: Text(universities[index].toString()),
+//
+// ),
+// );
+// },
+// )
